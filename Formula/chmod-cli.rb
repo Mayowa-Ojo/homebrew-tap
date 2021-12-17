@@ -5,20 +5,20 @@
 class ChmodCli < Formula
   desc "Simple TUI to interact with the chmod command."
   homepage "https://github.com/Mayowa-Ojo/chmod-cli"
-  version "0.1.0"
+  version "0.2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/Mayowa-Ojo/chmod-cli/releases/download/v0.1.0/chmod-cli_0.1.0_Darwin_x86_64.tar.gz"
-      sha256 "a5615445864736afaeb356975988a82f483bfa22dbeaceb6be4eaf586168aa32"
+    if Hardware::CPU.arm?
+      url "https://github.com/Mayowa-Ojo/chmod-cli/releases/download/v0.2.0/chmod-cli_0.2.0_Darwin_arm64.tar.gz"
+      sha256 "89ae14e603c314ae1cde240b5364b584f9a92470f9a531148479e93028936042"
 
       def install
         bin.install "chmod-cli"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/Mayowa-Ojo/chmod-cli/releases/download/v0.1.0/chmod-cli_0.1.0_Darwin_arm64.tar.gz"
-      sha256 "bd5956fe0cbd9292780bf697b01a91bd41e2ed5334c7517c68469589f51051cc"
+    if Hardware::CPU.intel?
+      url "https://github.com/Mayowa-Ojo/chmod-cli/releases/download/v0.2.0/chmod-cli_0.2.0_Darwin_x86_64.tar.gz"
+      sha256 "3ac697e8d43b4ac839c6635e13d4557a0b3d3c6159e66d8e85cfc3ee7ad47063"
 
       def install
         bin.install "chmod-cli"
@@ -27,17 +27,17 @@ class ChmodCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Mayowa-Ojo/chmod-cli/releases/download/v0.1.0/chmod-cli_0.1.0_Linux_arm64.tar.gz"
-      sha256 "0a7bc835888d0d6c9f0f33a433b45e6f71eb94712855c49933f3d42ee9de561d"
+    if Hardware::CPU.intel?
+      url "https://github.com/Mayowa-Ojo/chmod-cli/releases/download/v0.2.0/chmod-cli_0.2.0_Linux_x86_64.tar.gz"
+      sha256 "fd9e2d67253e5864a949417e29ac85ba0558be2c220456f1cc01dc835088dab5"
 
       def install
         bin.install "chmod-cli"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Mayowa-Ojo/chmod-cli/releases/download/v0.1.0/chmod-cli_0.1.0_Linux_x86_64.tar.gz"
-      sha256 "e6d0c361c3f1261f6dadaab275b91ddd8efe5dfea3ac1816626f79583846f05c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Mayowa-Ojo/chmod-cli/releases/download/v0.2.0/chmod-cli_0.2.0_Linux_arm64.tar.gz"
+      sha256 "0d157c512c99780437401a9365b47cdc9d06b4a842064d5facdc471b5dfb4cd1"
 
       def install
         bin.install "chmod-cli"
